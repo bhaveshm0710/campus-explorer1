@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Explorer: Holo Grid</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Three.js draws the 3D scene on this canvas, behind the page -->
+  <canvas id="scene" aria-hidden="true"></canvas>
+
+  <header class="navbar">
+    <a class="logo" href="#home">CAMPUS//GRID</a>
+    <nav aria-label="Main navigation">
+      <a href="#clubs">clubs</a>
+      <a href="#events">events</a>
+      <a href="#resources">resources</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <h1><span class="outline">Your campus,</span><br>but 3D.</h1>
+      <p class="intro">Every club is a tower. Search, filter or hover a card and watch the city answer back.</p>
+      <a class="button" href="#clubs">Enter the grid</a>
+      <p class="note">Sample data only. Not official college information.</p>
+    </section>
+
+    <div class="ticker" aria-hidden="true"><span>HACK NIGHT / OPEN MIC EVENING / INTER-YEAR FOOTBALL / SAMPLE EVENTS / HACK NIGHT / OPEN MIC EVENING / INTER-YEAR FOOTBALL / SAMPLE EVENTS /&nbsp;</span></div>
+
+    <section id="clubs" class="panel">
+      <h2>Clubs</h2>
+      <input id="search" type="search" placeholder="search clubs..." aria-label="Search clubs by name or description">
+      <div class="filters" role="group" aria-label="Filter clubs by category">
+        <button class="filter all active" data-category="All" aria-pressed="true">All</button>
+        <button class="filter tech" data-category="Tech" aria-pressed="false">Tech</button>
+        <button class="filter creative" data-category="Creative" aria-pressed="false">Creative</button>
+        <button class="filter sports" data-category="Sports" aria-pressed="false">Sports</button>
+      </div>
+      <div id="club-list" class="grid" aria-live="polite"></div>
+      <p id="no-results" hidden>No clubs found. Try another word or category.</p>
+    </section>
+
+    <section id="events" class="panel">
+      <h2>Events</h2>
+      <div class="grid">
+        <article class="card tech">
+          <h3>Hack Night</h3>
+          <p>Fri, 7 PM</p>
+          <button class="event-button" aria-expanded="false">Show details</button>
+          <p class="details" hidden>Room B-204. Build a tiny project in 3 hours. Beginners welcome, bring a laptop.</p>
+        </article>
+        <article class="card creative">
+          <h3>Open Mic Evening</h3>
+          <p>Sat, 5 PM</p>
+          <button class="event-button" aria-expanded="false">Show details</button>
+          <p class="details" hidden>Main Auditorium. Sing, recite or tell a joke. Sign up at the door.</p>
+        </article>
+        <article class="card sports">
+          <h3>Inter-Year Football</h3>
+          <p>Sun, 8 AM</p>
+          <button class="event-button" aria-expanded="false">Show details</button>
+          <p class="details" hidden>College ground. Teams of 7. Come with your batch or join a mixed team.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="resources" class="panel">
+      <h2>Resources</h2>
+      <ul class="resource-list">
+        <li><strong>Library</strong> Open 9 AM to 8 PM, ground floor</li>
+        <li><strong>Study notes</strong> Shared drive link (sample)</li>
+        <li><strong>Career cell</strong> Resume help every Wednesday</li>
+        <li><strong>Wi-Fi help</strong> IT desk, Block A</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>Made by a first-year student for the GDG pre-interview. Sample data only.</footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
